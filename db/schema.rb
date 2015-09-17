@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917222909) do
+ActiveRecord::Schema.define(version: 20150917223641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,4 +38,20 @@ ActiveRecord::Schema.define(version: 20150917222909) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "charges", force: :cascade do |t|
+    t.integer  "arrest_id"
+    t.integer  "charge_type_id"
+    t.string   "name"
+    t.string   "statute"
+    t.string   "classification"
+    t.integer  "required_bond"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "charges", ["arrest_id"], name: "index_charges_on_arrest_id", using: :btree
+  add_index "charges", ["charge_type_id"], name: "index_charges_on_charge_type_id", using: :btree
+
+  add_foreign_key "charges", "arrests"
+  add_foreign_key "charges", "charge_types"
 end
