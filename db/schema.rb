@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917223641) do
+ActiveRecord::Schema.define(version: 20150918162253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(version: 20150917223641) do
     t.string   "arrested_by"
     t.string   "agency"
     t.datetime "arrested_at"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "external_mugshot_url"
   end
 
   create_table "charge_types", force: :cascade do |t|
