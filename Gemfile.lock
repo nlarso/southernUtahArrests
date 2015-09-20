@@ -184,6 +184,7 @@ DEPENDENCIES
   factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
+  nokogiri
   pg
   puma
   rails (= 4.2.4)
