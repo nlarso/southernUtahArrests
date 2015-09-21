@@ -6,6 +6,7 @@ CarrierWave.configure do |config|
       provider: 'AWS',
       aws_access_key_id: credentials[:access_key_id],
       aws_secret_access_key: credentials[:secret_access_key],
+      region: 'us-west-1',
     }
     config.fog_directory = credentials[:s3_bucket]
   else
