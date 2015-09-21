@@ -1,0 +1,70 @@
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "1215",
+               "short_name" : "1215",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "South Main Street",
+               "short_name" : "S Main St",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Saint George",
+               "short_name" : "St George",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Washington County",
+               "short_name" : "Washington County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Utah",
+               "short_name" : "UT",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "84770",
+               "short_name" : "84770",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "5241",
+               "short_name" : "5241",
+               "types" : [ "postal_code_suffix" ]
+            }
+         ],
+         "formatted_address" : "1215 S Main St, St George, UT 84770, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 37.0874545,
+               "lng" : -113.5830874
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.0888034802915,
+                  "lng" : -113.5817384197085
+               },
+               "southwest" : {
+                  "lat" : 37.0861055197085,
+                  "lng" : -113.5844363802915
+               }
+            }
+         },
+         "partial_match" : true,
+         "place_id" : "ChIJUb7oIzBFyoARhwyc7vucrUE",
+         "types" : [ "street_address" ]
+      }
+   ],
+   "status" : "OK"
+}

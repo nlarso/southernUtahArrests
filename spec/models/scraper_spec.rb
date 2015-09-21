@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Scraper do
   describe '.scrape_all' do
-    before(:each) do
+    before do
       stub_request(:get, Scraper::URL)
         .to_return(body: File.read('spec/webmock_fixtures/bookings.html'))
     end
