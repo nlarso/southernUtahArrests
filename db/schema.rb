@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150920195553) do
+ActiveRecord::Schema.define(version: 20150921004027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150920195553) do
     t.datetime "updated_at",           null: false
     t.string   "external_mugshot_url"
     t.string   "mugshot"
+    t.text     "raw_data"
   end
 
   create_table "charge_types", force: :cascade do |t|

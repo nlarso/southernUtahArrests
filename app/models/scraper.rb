@@ -19,6 +19,7 @@ class Scraper
       arrest_date = DateTime.strptime(array[4].split('Arrest Date:')[1].strip, '%H:%M:%S %m/%d/%y')
       arrest = Arrest.find_or_initialize_by(arrested_at: arrest_date, name: name)
       if arrest.new_record?
+        arrest.raw_data = table
         arrest.external_mugshot_url = table.css('td')[0].css('img').attr('src').text.strip
         arrest.address = array[1].split(':')[1].strip
         arrest.city = array[2].split(':')[1].split('/')[0].strip
