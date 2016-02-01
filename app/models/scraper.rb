@@ -16,17 +16,16 @@ class Scraper
     html_document.css('table').each do |table|
       array = table.at_css('p').text.split("\n\t\t\t")
       name = array[0].strip
-      arrest_date = DateTime.strptime(array[4].split('Arrest Date:')[1].strip, '%H:%M:%S %m/%d/%y')
+      arrest_date = DateTime.strptime(array[3].split('Arrest Date:')[1].strip, '%H:%M:%S %m/%d/%y')
       arrest = Arrest.find_or_initialize_by(arrested_at: arrest_date, name: name)
       if arrest.new_record?
         arrest.raw_data = table
         arrest.external_mugshot_url = table.css('td')[0].css('img').attr('src').text.strip
-        arrest.address = array[1].split(':')[1].strip
-        arrest.city = array[2].split(':')[1].split('/')[0].strip
-        arrest.state = array[2].split(':')[1].split('/')[1].strip
-        arrest.pcf_number = array[3].split(':')[1].strip
-        arrest.arrested_by = array[5].split(':')[1].strip
-        arrest.agency = array[6].split(':')[1].strip
+        arrest.city = array[1].split(':')[1].split('/')[0].strip
+        arrest.state = array[1].split(':')[1].split('/')[1].strip
+        arrest.pcf_number = array[2].split(':')[1].strip
+        arrest.arrested_by = array[4].split(':')[1].strip
+        arrest.agency = array[5].split(':')[1].strip
         if arrest.save
           table.css('.charge').each do |charge|
             charge_name = charge.text.strip
