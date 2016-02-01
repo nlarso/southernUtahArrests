@@ -2,11 +2,10 @@ FactoryGirl.define do
 
   factory :arrest do
     name 'John Doe'
-    address '1215 Main Street'
-    city 'St. George'
+    address '1234 Main Street'
+    city 'Anywhere'
     state 'Utah'
-    latitude 37.087454
-    longitude -113.583087
+    zip '84770'
   end
 
 end
